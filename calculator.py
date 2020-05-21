@@ -31,13 +31,13 @@ class Calculator:
                                           'height=bsize, width=bsize)')
         self.button0 = tk.Button(parent, activebackground='white')
         self.button0['text'] = '0'
-        self.button0.place(x=b_interval * 2 + bsize, y=300 - b_interval/2, height=bsize, width=bsize)
+        self.button0.place(x=b_interval * 2 + bsize, y=300 - b_interval / 2, height=bsize, width=bsize)
         self.buttondot = tk.Button(parent, activebackground='white')
         self.buttondot['text'] = '.'
-        self.buttondot.place(x=b_interval, y=300 - b_interval/2, height=bsize, width=bsize)
+        self.buttondot.place(x=b_interval, y=300 - b_interval / 2, height=bsize, width=bsize)
         self.buttonsign = tk.Button(parent, activebackground='white')
         self.buttonsign['text'] = '+/-'
-        self.buttonsign.place(x=b_interval * 3 + 2* bsize, y=300 - b_interval/2, height=bsize, width=bsize)
+        self.buttonsign.place(x=b_interval * 3 + 2 * bsize, y=300 - b_interval / 2, height=bsize, width=bsize)
 
         # Operations
         self.buttonplus = tk.Button(parent, activebackground='white')
@@ -59,12 +59,12 @@ class Calculator:
 
         self.buttonc = tk.Button(parent, activebackground='white')
         self.buttonc['text'] = 'C'
-        self.buttonc.place(x=bsize * 3 + b_interval * 5, y=300 - bsize - b_interval ,
-                             height=bsize, width=bsize)
+        self.buttonc.place(x=bsize * 3 + b_interval * 5, y=300 - bsize - b_interval,
+                           height=bsize, width=bsize)
         self.buttonr = tk.Button(parent, activebackground='white')
         self.buttonr['text'] = '='
-        self.buttonr.place(x=bsize * 4 + b_interval * 6, y=300 - bsize - b_interval ,
-                             height=bsize, width=bsize)
+        self.buttonr.place(x=bsize * 4 + b_interval * 6, y=300 - bsize - b_interval,
+                           height=bsize, width=bsize)
         # Label
         self.labelr = tk.Label(bg='white', fg='black', width=10, height=1)
         self.labelr.config(font=("Courier", 36))
