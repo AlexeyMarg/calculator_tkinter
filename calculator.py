@@ -72,7 +72,7 @@ class Calculator:
 
     def initbpress(self):
         def pressb0():
-            if self.pressop == '' or self.second_flag is False:
+            if (self.pressop == '' or self.second_flag is False) and self.labelr['text'] != '0':
                 self.labelr['text'] = self.labelr['text'] + '0'
             else:
                 self.labelr['text'] = '0'
@@ -218,13 +218,27 @@ class Calculator:
                 self.mem = self.mem - float(self.labelr['text'])
             elif self.pressop == '*':
                 self.mem = self.mem * float(self.labelr['text'])
-                print('mul')
-            elif self.pressop == '/':
-                print('div')
+            elif self.pressop == '/' and float(self.labelr['text']) != 0:
                 self.mem = self.mem / float(self.labelr['text'])
-            self.labelr['text'] = str(self.mem)
+            if (self.pressop == '/' and float(self.labelr['text']) == 0) or len(str(self.mem // 1)) > 8:
+                self.labelr['text'] = ''
+            else:
+                if self.mem % 1 == 0:
+                    self.labelr['text'] = str(int(self.mem))
+                elif len(str(self.mem)) <= 8:
+                    self.labelr['text'] = str(self.mem)
+                else:
+                    temp = self.mem % 1
+                    temp = int((10 ** (9 - len(str(self.mem // 1))) * temp) // 1)
+                    print(str(temp))
+                    self.labelr['text'] = str(int(self.mem // 1)) + '.' + str(temp)
+
+
+
+
             self.pressop = ''
             self.second_flag = False
+
 
         self.buttonr['command'] = pressr
 
